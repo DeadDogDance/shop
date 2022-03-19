@@ -23,7 +23,8 @@ def create_product(product):
         f.write(product['luck'] + '\n')     #8
         f.write(product['energy'] + '\n')   #9
         f.write(str(product['date']) + '\n')#10
-        f.write(product['description'])     #11
+        f.write(product['description'])     #11 надо пофиксить переносы
+                                            # дже-е-е-ейсо-о-он
 
 def show_products():
     products = []
@@ -34,14 +35,6 @@ def show_products():
             "id":strings[0],
             "price":strings[1],
             "name":strings[2],
-            # "age":strings[3],
-            # "race":strings[4],
-            # "sex":strings[5],
-            # "work_speed":strings[6],
-            # "speed":strings[7],
-            # "luck":strings[8],
-            # "energy":strings[9],
-            # "date":strings[10],
             "description":strings[11]
         }
         products.append(product)
@@ -56,9 +49,8 @@ def index():
     products = show_products()
     return render_template('index.html', products = products)
 
-@app.route('/product_page/<id>', methods=["GET"])
+@app.get('/product_page/<id>')
 def product_page(id):
-    print(id)
     with open(PRODUCTS_DIR / f'product{id}.txt', 'rt') as f:
         strings = f.read().split('\n')
         product = {
@@ -89,7 +81,7 @@ def post_product():
 
 @app.post('/add_product')
 def add_product():
-    product_id = 1
+    product_id = len(show_products())+1
     name = request.form["name"]
     age = request.form["age"]
     race = request.form["race"]
@@ -103,9 +95,6 @@ def add_product():
     # '================================='
     price = request.form["price"]
     date = datetime.date.today()
-    # create_product({"id":product_id,"name":name, "age":age, "race": race,
-    #                  "sex":sex, "description":description, "price":price,
-    #                  "date":date})
 
     create_product({"id":product_id,"name":name,"age":age,"race":race,
                     "sex":sex,"description":description,"work_speed":work_speed,

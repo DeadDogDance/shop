@@ -18,9 +18,6 @@
         <article>                                                                       <!--Вот этот article надо заверуть в клекабельную ссылку на страницу продукта. Бужет переход по id-->
             <div><a href="{{ url_for('product_page', id=product.id)}}">Product page</a></div>       <!--Затычка вв виде ссылки-->
             <div>Name: {{ product.name }}</div>                                         <!--В div добавить украшенений ))))-->
-            <div>Age: {{ product.age }}</div>
-            <div>Race: {{ product.race}}</div>
-            <div>Sex: {{ product.sex }}</div>
             <div>Price: {{ product.price }}</div>
             <div>About: {{ product.description }}</div>
         </article>
