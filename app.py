@@ -30,18 +30,18 @@ def show_products():
     for f in PRODUCTS_DIR.iterdir():
         with open(f, 'rt') as read_file:
             strings = read_file.read().split('\n')
-            print(products)
         product = {
+            "id":strings[0],
             "price":strings[1],
             "name":strings[2],
-            "age":strings[3],
-            "race":strings[4],
-            "sex":strings[5],
-            "work_speed":strings[6],
-            "speed":strings[7],
-            "luck":strings[8],
-            "energy":strings[9],
-            "date":strings[10],
+            # "age":strings[3],
+            # "race":strings[4],
+            # "sex":strings[5],
+            # "work_speed":strings[6],
+            # "speed":strings[7],
+            # "luck":strings[8],
+            # "energy":strings[9],
+            # "date":strings[10],
             "description":strings[11]
         }
         products.append(product)
@@ -56,9 +56,27 @@ def index():
     products = show_products()
     return render_template('index.html', products = products)
 
-@app.get('product_page')
+@app.route('/product_page/<id>', methods=["GET"])
 def product_page(id):
-    pass
+    print(id)
+    with open(PRODUCTS_DIR / f'product{id}.txt', 'rt') as f:
+        strings = f.read().split('\n')
+        product = {
+            "id":strings[0],
+            "price":strings[1],
+            "name":strings[2],
+            "age":strings[3],
+            "race":strings[4],
+            "sex":strings[5],
+            "work_speed":strings[6],
+            "speed":strings[7],
+            "luck":strings[8],
+            "energy":strings[9],
+            "date":strings[10],
+            "description":strings[11]
+        }
+    return render_template("product_page.html", product = product)
+        
 
 
 @app.get('/info')

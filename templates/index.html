@@ -15,8 +15,9 @@
 
 
     {% for product in products %}
-        <article>                                         <!--Вот этот article надо заверуть в клекабельную ссылку на страницу продукта. Бужет переход по id-->
-            <div>Name: {{ product.name }}</div>           <!--В div добавить украшенений ))))-->
+        <article>                                                                       <!--Вот этот article надо заверуть в клекабельную ссылку на страницу продукта. Бужет переход по id-->
+            <div><a href="{{ url_for('product_page', id=product.id)}}">Product page</a></div>       <!--Затычка вв виде ссылки-->
+            <div>Name: {{ product.name }}</div>                                         <!--В div добавить украшенений ))))-->
             <div>Age: {{ product.age }}</div>
             <div>Race: {{ product.race}}</div>
             <div>Sex: {{ product.sex }}</div>
