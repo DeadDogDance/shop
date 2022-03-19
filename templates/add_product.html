@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+</head>
+<body>
+    <form action="/add_product" method="post">
+        <div>
+            <label for="age">Age:</label>
+            <input type="text" name="age" required>
+        </div>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" required>
+        </div>
+        <div>                                    <!--div используется для css и js -->
+            <label for="race">Race:</label>
+            <select required name="race">
+                <option></option>
+                <option value="Goblin">Goblin</option>
+                <option value="Giant">Giant</option>
+                <option value="Human">Human</option>
+                <option value="Elf">Elf</option>
+            </select>
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="sex" value="Male" required>Male
+              </label>
+              <label>
+                <input type="radio" name="sex" value="Female">Female
+              </label>
+              <label>
+                <input type="radio" name="sex" value="Other">Other
+              </label>   
+        </div>
+
+        <!-- Stats -->
+
+        <div>
+            <label for="work_speed">Work speed</label>
+            <input type="range" name="work_speed" min="1" max="10">
+        </div>
+        <div>
+            <label for="speed">Speed</label>
+            <input type="range" name="speed" min="1" max="10">
+        </div>
+        <div>
+            <label for="luck">Luck</label>
+            <input type="range" name="luck" min="1" max="10">
+        </div>
+        <div>
+            <label for="energy">Energy</label>
+            <input type="range" name="energy" min="1" max="10">
+        </div>
+
+       <!--End of stats-->
+
+        <div>
+            <label for="description">Description:</label>
+            <textarea name="description"cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="text" name="price">
+        </div>
+        <div>
+            <input type="submit" value="Add">
+        </div>
+    </form>
+</body>
+</html>
