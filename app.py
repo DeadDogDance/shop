@@ -68,7 +68,17 @@ def product_page(id):
             "description":strings[11]
         }
     return render_template("product_page.html", product = product)
-        
+
+@app.get('/buy/<id>')
+def buy(id):
+    with open(PRODUCTS_DIR / f'product{id}.txt', 'rt') as f:
+        strings = f.read().split()
+        product = {
+            "id":strings[0],
+            "price":strings[1],
+            "name":strings[2],
+        }
+    return render_template("buy_page.html", product = product)
 
 
 @app.get('/info')
