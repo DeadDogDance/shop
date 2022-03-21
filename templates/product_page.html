@@ -2,21 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product.css')}}">
     <title>{{ product.name }}</title>
 </head>
 <body>
+    <div class="signature">
+        <div class="signature_title">
+            <p class="signature_name">
+                {{ product.name }}
+            </p>
+        </div>
+        <div class="signature_content  signature_statement">
+            <p>Возраст: {{ product.age }}</p>
+            <p>Раса: {{ product.race}}</p>
+            <p>Пол: {{ product.sex }}</p>
+            <p>Цена: {{ product.price }}</p>
+            <p>Скорость работы: {{ product.work_speed }}</p>
+            <p>Скорость: {{ product.speed }}</p>
+            <p>Удача: {{ product.luck }}</p>
+            <p>Выносливость: {{ product.energy }}</p>
+            <p>Описание: {{ product.description }}</p>
+        </div>
+        <a style="display:block" href="{{ url_for('buy', id=product.id)}}">
+            <div class="sign"></div>
+        </a>
+        
+    </div>
     <div><a href="/">Home</a></div>
-    <article>                                         <!--Вот этот article надо заверуть в клекабельную ссылку на страницу продукта. Бужет переход по id-->
-        <div>Name: {{ product.name }}</div>           <!--В div добавить украшенений ))))-->
-        <div>Age: {{ product.age }}</div>
-        <div>Race: {{ product.race}}</div>
-        <div>Sex: {{ product.sex }}</div>
-        <div>Price: {{ product.price }}</div>
-        <div>Work Speed: {{ product.work_speed }}</div>
-        <div>Speed: {{ product.speed }}</div>
-        <div>Luck: {{ product.luck }}</div>
-        <div>Energy: {{ product.energy }}</div>
-        <div>About: {{ product.description }}</div>
-    </article>
 </body>
 </html>

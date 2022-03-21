@@ -1,0 +1,629 @@
+/* Блок */
+.block{
+    width:100%;
+    height: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    background-color: rgb(41, 41, 41);
+}
+
+a {
+    color: rgb(20, 20, 20);
+    text-decoration: none;
+}
+
+
+/* Кукловод */
+.doller{
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    transform-origin: bottom;
+    transform: scale(0.4);
+    top: 24%;
+    left: 78%;
+}
+
+.mainBody_log{
+    width: 800px;
+    height: 1000px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform-origin: bottom;
+    transform: rotate(-20deg);
+}
+
+.mainBody{
+    background-image: url(images/body.png);
+    width: 800px;
+    height: 1200px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform-origin: bottom;
+}
+
+.neck {
+    background-image: url(images/neck.png);
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: -150px;
+    left: 400px;
+    transform-origin: bottom;
+    transform: rotate(-15deg); 
+
+    animation: move_neck 15s linear alternate infinite;
+}
+
+.face{
+    background-image: url(images/face.png);
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    top: -900px;
+    left: -400px;
+    transform-origin: bottom;
+    transform: rotate(-15deg);
+    
+    animation: move_neck 7s linear alternate infinite;
+    animation-delay: 50ms;
+}
+
+/* Руки */
+.arm {
+    background-image: url(images/h2.png);
+    width: 1000px;
+    height: 400px;
+    position: absolute;
+    top: -100px;
+    left: -450px;
+    transform-origin: right;
+    transform: rotate(-45deg);
+}
+
+.l1{
+    background-image: url(images/h2_2.png);
+    transform: rotate(-40deg);
+}
+
+.forearm {
+    background-image: url(images/h1.png);
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    top: 50px;
+    left: -750px;
+    transform-origin: right;
+    transform: rotate(135deg);
+
+    animation: move_forearm 15s linear alternate infinite;
+    animation-delay: 6s;
+}
+
+.l2{
+    background-image: url(images/h1_2.png);
+    transform: rotate(155deg) scaleY(-1);
+
+    animation-name: NULL;
+}
+
+
+/* Ладонь */
+.palm_log {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 0px;
+    left: -350px;
+    transform-origin: right;
+    transform: rotate(-50deg);
+
+    animation: move_palm 10s linear alternate infinite;
+}
+
+.palm {
+    background-image: url(images/palm.png);
+
+    width: 400px;
+    height: 400px;
+    position: absolute;
+}
+
+.l3{
+    top: 0px;
+    left: -300px;
+    transform-origin: right;
+    transform: rotate(-20deg);
+}
+
+
+/* Фаланги */
+.fin {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 150px;
+    z-index: 0; 
+    transform-origin: right;
+
+    animation: 6s linear alternate infinite;
+    animation-name: move_fing, move_fing;
+} 
+
+.first {
+    background-image: url(images/f2.png);
+    transform: scale(1);
+}
+
+.middle {
+    background-image: url(images/f2.png);
+}
+
+.last {
+    background-image: url(images/f1.png);
+}
+
+.bracing{
+    right: 350px;
+}
+
+
+.l4{
+    animation-name: NULL;
+    top:-100px;
+    left: 200px;
+
+    transform:  scaleY(-1) rotate(-140deg);
+}
+
+/* Пальцы */
+.ind{
+    position: relative;
+    top: -5px;  
+}
+
+.mid{
+    position: relative;
+    top: 50px;
+    transform: scale(1.05);
+}
+
+.rin{
+    position: relative;
+    top: 100px;
+    transform: scale(1);  
+}
+
+.pin{
+    position: relative;
+    top: 160px;
+    transform: scale(0.9);
+}
+
+.big{
+    position: relative;
+    transform: scale(1.2);
+    right: 100px;
+    top: -50px;    
+}
+
+/* Кукла */
+.doll{
+    position: relative;
+    transform-origin: bottom;
+    transform: scale(1.25);
+    top: 600px;
+    left: -950px;
+}
+
+.doll_body{
+    background-image: url(images/Doll/body.png);
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform-origin: bottom;
+
+    animation: move_doll_body 15s linear alternate infinite;
+    animation-delay: 2s;
+}
+
+.doll_head{
+    background-image: url(images/Doll/head.png);
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: -150px;
+    left: 0px;
+    transform-origin: bottom;
+    animation: move_doll_head 10s linear alternate infinite;
+}
+
+.doll_h1{
+    background-image: url(images/Doll/h1.png);
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 0px;
+    left: 125px;
+    transform-origin: left;
+    animation: move_doll_hand 15s linear alternate infinite;
+}
+
+.doll_h2{
+    background-image: url(images/Doll/h2.png);
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 0px;
+    left: 53px;
+    transform-origin: left;
+    animation: move_doll_hand 10s linear alternate infinite;
+}
+
+.doll_h3{
+    background-image: url(images/Doll/h3.png);
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: -6px;
+    left: 40px;
+    transform-origin: left;
+    animation: move_doll_hand 5s linear alternate infinite;
+}
+
+.doll_l1{
+    background-image: url(images/Doll/l1.png);
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 115px;
+    left: 10px;
+    transform-origin: right;
+    animation: move_doll_leg 5s linear alternate infinite;
+}
+
+.doll_l2{
+    background-image: url(images/Doll/l2.png);
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 0px;
+    left: -40px;
+    transform-origin: right;
+    animation: move_doll_leg 5s linear alternate infinite;
+}
+
+.doll_l3{
+    background-image: url(images/Doll/l3.png);
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 0px;
+    left: -60px;
+    transform-origin: right;
+    animation: move_doll_leg 5s linear alternate infinite;
+}
+
+.left_class{
+    transform: scaleX(-1);
+}
+
+.right_class{
+    transform: scaleX(1);
+}
+
+
+/* Анимации */
+@keyframes move_palm {
+    0% {
+        transform: rotate(-50deg);
+    }
+    100% {
+        transform: rotate(-65deg);
+    }
+}
+
+@keyframes move_fing {
+    0% {
+        transform: position(0deg);
+    }
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes move_forearm {
+    0% {
+        transform: rotate(135deg);
+    }
+    100% {
+        transform: rotate(125deg);
+    }
+}
+
+@keyframes move_neck {
+    0% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(-7deg);
+    }
+}
+
+@keyframes move_head {
+    0% {
+        transform: rotate(135deg);
+    }
+    100% {
+        transform: rotate(120deg);
+    }
+}
+
+@keyframes move_doll_body {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(20deg);
+    }
+    66%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes move_doll_head {
+    0% {
+        top: -150px;
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(10deg);
+    }
+    40%{
+        transform: rotate(-10deg);
+    }
+    80%{
+        transform: rotate(0deg);
+    }
+    90%{
+        transform: rotate(5deg);
+    }
+    95%{
+        top: -150px;
+        transform: rotate(-5deg);
+    }
+    97%{
+        transform: rotate(2deg);
+        top: -155px;
+    }
+    99%{
+        transform: rotate(-2deg);
+        top: -160px;
+    }
+    100% {
+        transform: rotate(2deg);
+        top: -165px;
+    } 
+}
+
+@keyframes move_doll_hand {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(35deg);
+    }
+    100% {
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes move_doll_leg {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-40deg);
+    }
+}
+
+
+/* Псевдо рандом анимаций */
+.anim_1 {
+    animation-delay: 0, 10000ms;
+    animation-duration: 7s;
+}
+
+.anim_2 {
+    animation-delay: 5678ms, 2000ms;
+    animation-duration: 5s;
+}
+
+.anim_3 {
+    animation-delay: 3234ms, 4698ms;
+    animation-duration: 4567ms;
+}
+
+.anim_4 {
+    animation-delay: 567ms, -345ms;
+    animation-duration: 4123ms;
+}
+
+.anim_5 {
+    animation-delay: 0ms, 567ms;
+}
+
+
+/* Декор */
+.theater {
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    transform: scale(1);
+    overflow: hidden;
+}
+
+.upper_curtain{
+    background-image: url(images/Theater/upper_curtain.png);
+    width: 100%;
+    height: 1080px;
+    position: absolute;
+    top: -100px;
+    left: 0px;
+    /* transform-origin: bottom; */
+
+    /* animation: move_doll_body 15s linear alternate infinite;
+    animation-delay: 2s; */
+}
+
+.side_curtain{
+    background-image: url(images/Theater/side_curtain.png);
+    width: 100%;
+    height: 1080px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /* transform-origin: bottom; */
+
+    /* animation: move_doll_body 15s linear alternate infinite;
+    animation-delay: 2s; */
+}
+
+.wood{
+    background-image: url(images/Theater/under_desk.png);
+    width: 100%;
+    height: 1080px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.tablet_up{
+    background-image: url(images/Theater/market-1.png);
+    width: 100%;
+    height: 1080px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.tablet_down{
+    background-image: url(images/Theater/market-2.png);
+    width: 100%;
+    height: 1080px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.mooving_curtain{
+    background-image: url(images/Theater/lm_curtain.png);
+    width: 100%;
+    height: 1080px;
+    position: absolute;
+    top: 0px;
+    left: 3000px;
+
+    animation-duration: 2s;
+    animation-name: move_curtain;
+}
+
+@keyframes move_curtain {
+    0%{
+        left: 0px;
+    }
+    33% {
+        left: 1000px;
+    }
+    100% {
+        left: 2000px;
+    }
+}
+
+
+/* Позиции */
+.post_list {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-origin: top;
+    top: 110%;
+    left: 0%;
+}
+
+.item{
+    position: relative;
+    width: 100%;
+    height: 270px;
+    top: -50px;
+    left: 0%;
+    background-image: url(images/Posts/Post.png);
+    overflow: hidden;
+}
+
+.filling {
+    position: relative;
+    width: 60%;
+    height: 200px;
+    top: 50px;
+    left: 300px;
+}
+
+.frame {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    top: 25px;
+    left: 25px;
+    background-image: url(images/Posts/frame.png);
+    transform: scale(0.8);
+}
+
+.buy {
+    position: absolute;
+    width: 540px;
+    height: 270px;
+    top: 25px;
+    left: 1350px;
+    background-image: url(images/Posts/buy.png);
+    transform: scale(0.65);
+}
+
+.last_item{
+    position: relative;
+    width: 100%;
+    height: 270px;
+    top: -50px;
+    left: 0%;
+    background-image: url(images/Posts/last_post.png);
+}
+
+
+/* Текст */
+.name_class {
+    font-size: 200%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.description_class {
+    font-size: 150%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+}

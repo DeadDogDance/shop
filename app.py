@@ -29,7 +29,7 @@ def create_product(product):
 def show_products():
     products = []
     for f in PRODUCTS_DIR.iterdir():
-        with open(f, 'rt') as read_file:
+        with open(f, 'rt',encoding='utf-8') as read_file:
             strings = read_file.read().split('\n')
         product = {
             "id":strings[0],
@@ -51,7 +51,7 @@ def index():
 
 @app.get('/product_page/<id>')
 def product_page(id):
-    with open(PRODUCTS_DIR / f'product{id}.txt', 'rt') as f:
+    with open(PRODUCTS_DIR / f'product{id}.txt', 'rt',encoding='utf-8') as f:
         strings = f.read().split('\n')
         product = {
             "id":strings[0],
@@ -71,7 +71,7 @@ def product_page(id):
 
 @app.get('/buy/<id>')
 def buy(id):
-    with open(PRODUCTS_DIR / f'product{id}.txt', 'rt') as f:
+    with open(PRODUCTS_DIR / f'product{id}.txt', 'rt', encoding='utf-8' ) as f:
         strings = f.read().split()
         product = {
             "id":strings[0],

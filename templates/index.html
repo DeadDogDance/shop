@@ -1,30 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <title>Лавка Существ</title>
 </head>
 <body>
-    
-    <a href="/add_product">Post</a>
+    <!-- Кукловод -->
+    <div class="block">
+        <div class="doller">
+            <!-- Кукла -->
+            <div class="doll">
+                <div class="doll_body">
 
-    <!--Зона для кукловода-->
+                    <!-- Голова -->
+                    <div class="doll_head"></div>
 
-    <!--Боковая панель-->
+
+                    <!-- Руки -->
+                    <div class="left_class">
+                        <div class="doll_h1">
+                            <div class="doll_h2">
+                                <div class="doll_h3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right_class">
+                        <div class="doll_h1">
+                            <div class="doll_h2">
+                                <div class="doll_h3"></div>
+                            </div>
+                        </div>
+                    </div>
 
 
-    {% for product in products %}
-        <article>                                                                       <!--Вот этот article надо заверуть в клекабельную ссылку на страницу продукта. Бужет переход по id-->
-            <div><a href="{{ url_for('product_page', id=product.id)}}">Product page</a></div>       <!--Затычка вв виде ссылки-->
-            <div>Name: {{ product.name }}</div>                                         <!--В div добавить украшенений ))))-->
-            <div>Price: {{ product.price }}</div>
-            <div>About: {{ product.description }}</div>
-            <a href="{{ url_for('buy', id=product.id)}}">Buy one</a>
-        </article>
-    {% endfor %}
-    
-    <a href="/info">Info</a>
+                    <!-- Ноги -->
+                    <div class="left_class">
+                        <div class="doll_l1 anim_1">
+                            <div class="doll_l2 anim_3">
+                                <div class="doll_l3 anim_2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right_class">
+                        <div class="doll_l1 anim_5">
+                            <div class="doll_l2 anim_4">
+                                <div class="doll_l3 anim_1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Колдун :-) -->
+            <div class="mainBody_log">
+                <!-- Правая рука -->
+                <div class="arm l1">
+                    <div class="forearm l2">
+                        <div class="palm l3">
+                            <!-- <div class="fin last l4"></div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Лицо -->
+                <div class="neck">
+                    <div class="face">  
+
+                    </div>
+                </div>
+
+                <div class="mainBody"></div>
+
+                <!-- Левая рука -->
+                <div class="arm">
+                    <div class="forearm">
+                        <div class="palm_log">
+                            <div class="big">
+                                <div class="fin middle anim_1">
+                                    <div class="fin last"></div>
+                                </div>
+                            </div>
+
+                            <div class="palm"></div>
+
+                            <div class="ind">
+                                <div class="fin first bracing anim_4">
+                                    <div class="fin middle">
+                                        <div class="fin last"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mid">
+                                <div class="fin first bracing anim_5">
+                                    <div class="fin middle">
+                                        <div class="fin last"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rin">
+                                <div class="fin first bracing anim_2">
+                                    <div class="fin middle">
+                                        <div class="fin last"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pin">
+                                <div class="fin first bracing anim_3">
+                                    <div class="fin middle">
+                                        <div class="fin last"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Театр -->
+    <div class="theater">
+        <div class="upper_curtain"></div>
+        <div class="tablet_up"></div>
+
+        <div class="left_class">
+            <div class="mooving_curtain"></div>
+        </div>
+        <div class="right_class">
+            <div class="mooving_curtain"></div>
+        </div>
+
+        <div class="side_curtain left_class"></div>
+        <div class="side_curtain right_class"></div>
+            
+        <div class="wood"></div>
+        <div class="tablet_down"></div>          
+    </div>
+
+    <div class="post_list">
+        {% for product in products %}
+            <article>                                                                      
+                <a style="display:block" href="{{ url_for('product_page', id=product.id)}}">
+                    <div class="item">
+                        <div class="frame"></div>
+                        <div class="filling">
+                            <p class="name_class">{{ product.name }}</p>                                        
+                            <p class="description_class">{{ product.description }}</p>
+                        </div>
+                        <div class="buy" title="{{ product.price }}"></div>
+                    </div>
+                </a> 
+            </article>
+        {% endfor %}
+        <div class="last_item"><a href="/info">Info</a>
+        </div>
+    </div>
 
 </body>
 </html>

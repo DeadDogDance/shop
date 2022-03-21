@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(41, 41, 41);
+}
+
+.signature {
+    background-image: url(images/Deal/signature.png);
+    width: 720px;
+    height: 1080px;
+}
+
+.signature_title {
+    position: relative;
+    top: 75px;
+}
+
+.signature_content {
+    position: relative;
+    top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signature_name{
+    margin-left: 100px;
+    margin-right: auto;
+    font-size: 200%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.signature_statement{
+    margin-left: 50px;
+    margin-left: 50px;
+    font-size: 150%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+}
+
+.sign {
+    position: absolute;
+    top: 900px;
+    width: 40%;
+    height: 200px;
+    /* background-color: brown; */
+}
